@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+html,body{
+  padding: 0;
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  color: white;
+  background-size: 500% 500%;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-image: -o-linear-gradient(
+              315deg,
+              #0E1111 0%,
+              #232B2B 29%,
+              #353839 67%,
+              #3B444B 100%);
+          background-image: linear-gradient(
+              -225deg,
+              #0E1111 0%,
+              #232B2B 29%,
+              #353839 67%,
+              #3B444B 100%);
+          -webkit-animation: change_bg 15s linear infinite;
+                  animation: change_bg 15s linear infinite;
+      }
+      @-webkit-keyframes change_bg{
+          50%{
+              background-position: 100% 100%;
+          }
+      }
+      @keyframes change_bg{
+          50%{
+              background-position: 100% 100%;
+          }
+      }
+
+input[type=number]{
+  width: 200px;
+  height: 23px;
+  border-radius: 5px;
+  border-style: none;
+  padding: 3px;
+  padding-left: 6px;
+  outline-color: blue;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+#processes{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  animation: ease-out slideLeftToRight .5s;
+}
+
+@keyframes slideLeftToRight{
+  0%{
+    transform: translate(30%);
+    opacity: 0;
+  }
+  100%{
+    transform: translate(0%);
+    opacity: 1;
+  }
+}
+
+#proc h1{
+  padding: 0;
+  margin: 0;
+  font-size: 35px;
+}
+
+#proc{
+  padding: 30px;
+  margin: auto;
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  flex-direction: column;
+  justify-content: space-around;
+  border-style: solid;
+  border-radius: 15px;
+  align-self: center;
+  align-items: center;
+}
+
+#num-process{
+  margin: 25px 0px;
+}
+
+#process-submit{
+  cursor: pointer;
+  background: #FFC300;
+  border: none;
+  border-radius: 3px;
+  margin-left: 5px;
+  outline: 0;
+  width: 100%;
+  height: 35px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-weight: bold;
+  font-family: Poppins, sans-serif;
+  margin: 0;
+}
+
+#process-submit:hover{
+  transition: ease .5s;
+  color: white;
+  box-shadow: 0 0 7px 0 rgba(0,0,0,.5);
+  background: #997500;
+}
+
+
+#input-page{
+  display: block;
+  animation: ease-out slideLeftToRight .5s;
+}
+
+#nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#nav h1{
+  font-size: 30px;
+}
+
+#back{
+  cursor: pointer;
+  background: transparent;
+  border-color: white;
+  border-style: solid;
+  border-radius: 18px;
+  color: white;
+  padding: 7px 13px;
+  height: fit-content;
+  outline: 0;
+}
+
+table, th, td {
+  border: 1px solid white;
+  text-align: center;
+}
+
+table{
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+}
+
+#process-id{
+  width: inherit;
+  height: inherit;
+  background: transparent;
+  outline: 0;
+  color: white;
+  border: none;
+  text-align: center;
+}
+
+#go-button{
+  text-align: right;
+
+  padding: 5px;
+  border-radius: 3px;
+}
+
+#go-button button{
+  background-color: #00A8AF;
+  border: none;
+  border-radius: 3px;
+  padding: 6px 10px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+#go-button button:hover{
+  transition: ease .5s;
+  background-color: #226D86;
+  color: lightgray;
+}
