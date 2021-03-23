@@ -31,20 +31,24 @@
       </tr>
       <?php
       for ($i = 0; $i < $numprocess; $i++){
-        echo "<tr>";
-        echo "<td> <input type=\"text\" value=\"P".$i."\" id=\"process-id\" min=\"0\" maxlength=\"3\"> </td>";
-        echo "<td> <input type=\"number\" value=\"0\" id=\"process-id\" min=\"0\" maxlength=\"3\"> </td>";
-        echo "<td> <input type=\"number\" value=\"0\" id=\"process-id\" min=\"0\" maxlength=\"3\"> </td>";
-        echo "<td> <input type=\"number\" value=\"\" id=\"process-id\" min=\"0\" maxlength=\"3\"> </td>";
-        echo "<td> <input type=\"number\" value=\"\" id=\"process-id\" min=\"0\" maxlength=\"3\"> </td>";
-        echo "<td> <input type=\"number\" value=\"\" id=\"process-id\" min=\"0\" maxlength=\"3\"> </td>";
+        echo "<tr id=\"table-val\">";
+        echo "<td> P".$i +  1 ."</td>";
+        echo "<td> <input type=\"number\" placeholder=\"0\" id=\"process-id\" min=\"1\" maxlength=\"3\"> </td>";
+        echo "<td> <input type=\"number\" placeholder=\"0\" id=\"process-id\" min=\"0\" maxlength=\"3\"> </td>";
+        echo "<td> </td>";
+        echo "<td> </td>";
+        echo "<td> </td>";
         echo"</tr>";
       }
       ?>
+      <script type="text/javascript">
+        var numprocess = "<?php echo $numprocess; ?>";
+      </script>
       <tr>
-        <td id="go-button" colspan="6"><button type="submit">GO!</submit></td>
+        <td id="go-button" colspan="6"><button type="submit" onclick="getValue()">GO!</submit></td>
       </tr>
       </table>
+      </script>
     </div>
   </section>
 </body>

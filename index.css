@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 html,body{
+  overflow-x: hidden;
   padding: 0;
   margin: 0;
   font-family: Poppins, sans-serif;
@@ -150,6 +151,7 @@ table, th, td {
 }
 
 table{
+  border-radius: 10px;
   border-collapse: collapse;
 }
 
@@ -188,4 +190,12 @@ th, td {
   transition: ease .5s;
   background-color: #226D86;
   color: lightgray;
+}
+
+#ganttProc td{
+  width: 32px;
+}
+
+#myTable{
+  margin-top: 30px;
 }
