@@ -19,7 +19,7 @@
       <form method="POST" onsubmit="processes()">
         <label for="num-process">Number of Processes:</label>
         <input id="num-process" type="number" min="1" max="10" placeholder="Enter a number" name="number_of_proc" required><br/>
-        <input type="submit" name="submit" id="process-submit">
+        <input type="submit" name="submit" value="START" id="process-submit">
         <?php
         if(isset($_POST['submit'])&&isset($_POST['number_of_proc'])) {
            $_SESSION['superhero'] = $_POST['number_of_proc'];

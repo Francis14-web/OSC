@@ -5,6 +5,7 @@ var tmpat;
 var tmpbt;
 var y = [];
 var totalBT = 0;
+var chartArray = [];
 
 function processes(){
   numprocess = document.getElementById('num-process').value;
@@ -35,6 +36,7 @@ function getValue(){
 }
 
 function generateTable() {
+  chartArray = [];
   //code to sort array based on their arrival time
   y.sort(function(a, b) {
   return a[1] - b[1];
@@ -42,35 +44,21 @@ function generateTable() {
   //alert the output para malaman kung maayos ba
   alert (y);
 
-  //calculate totalBT
-  for(i=0; i < numprocess; i++)
-    totalBT += parseInt(y[i][2]);
-  alert (totalBT);
-
-  //create a table
-  var a = document.createElement("TABLE");
-  a.setAttribute("id", "myTable");
-  a.setAttribute("align", "center");
-  document.body.appendChild(a);
-  var b = document.createElement("TR");
-  b.setAttribute("id", "ganttProc");
-
-  for(var i = 0; i <= totalBT; i++){
-    var spancolumn = 0;
-
-    document.getElementById("myTable").appendChild(b);
-    var c = document.createElement("TD");
-    var d = document.createTextNode(y[i][0]);
-    c.appendChild(d);
-    document.getElementById("ganttProc").appendChild(c);
-    while(y[i][2] - 1 != 0){
-      var e = document.createElement("TD");
-      spancolumn++;
-      document.getElementById("ganttProc").appendChild(e);
-      y[i][2]--;
+  var ctr = 0;
+  var i = 0;
+  while (ctr != y.length){
+    var bt = y[ctr][2];
+    var btctr = 0;
+    if (y[ctr][1] == i || i > y[ctr][1]){
+      while(btctr < bt){
+        chartArray.push(y[ctr][0]);
+        btctr++;
+      }
+      ctr++;
+    } else {
+      chartArray.push(0);
+    }
   }
-  c.setAttribute("colspan", spancolumn+1);
-}
 
-
+  alert(chartArray);
 }

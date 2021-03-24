@@ -12,16 +12,16 @@ html,body{
   height: 100vh;
   background-image: -o-linear-gradient(
               315deg,
-              #0E1111 0%,
-              #232B2B 29%,
-              #353839 67%,
-              #3B444B 100%);
+              #000039 0%,
+              #310039 29%,
+              #630039 67%,
+              #940039 100%);
           background-image: linear-gradient(
               -225deg,
-              #0E1111 0%,
-              #232B2B 29%,
-              #353839 67%,
-              #3B444B 100%);
+              #000039 0%,
+              #310039 29%,
+              #630039 67%,
+              #940039 100%);
           -webkit-animation: change_bg 15s linear infinite;
                   animation: change_bg 15s linear infinite;
       }
@@ -192,7 +192,7 @@ th, td {
   color: lightgray;
 }
 
-#ganttProc td{
+#myTable td{
   width: 32px;
 }
 
