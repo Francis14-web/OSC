@@ -151,8 +151,8 @@ table, th, td {
 }
 
 table{
-  border-radius: 10px;
   border-collapse: collapse;
+  border-radius: 10px;
 }
 
 th, td {

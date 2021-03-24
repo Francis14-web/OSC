@@ -56,9 +56,36 @@ function generateTable() {
       }
       ctr++;
     } else {
-      chartArray.push(0);
+      chartArray.push("");
     }
+    i++;
   }
 
   alert(chartArray);
+  var a = document.createElement("TABLE");
+  a.setAttribute("id", "myTable");
+  a.setAttribute("align", "center");
+  document.body.appendChild(a);
+  var b = document.createElement("TR");
+  b.setAttribute("id", "ganttProc");
+
+  for (i=0; i < chartArray.length; i++){
+    var f = document.createElement("TR");
+    f.setAttribute("id", "ganttTime");
+    document.getElementById("myTable").appendChild(f);
+    var g = document.createElement("TD");
+    var h = document.createTextNode(i);
+    g.appendChild(h);
+    document.getElementById("ganttTime").appendChild(g);
+  }
+
+  for (i=0; i < chartArray.length; i++){
+    var f = document.createElement("TR");
+    f.setAttribute("id", "ganttChart");
+    document.getElementById("myTable").appendChild(f);
+    var g = document.createElement("TD");
+    var h = document.createTextNode(chartArray[i]);
+    g.appendChild(h);
+    document.getElementById("ganttChart").appendChild(g);
+  }
 }
