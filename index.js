@@ -15,7 +15,6 @@ var wt = [];
 function processes(){
   numprocess = document.getElementById('num-process').value;
   window.location = 'cpuscheduling.php';
-  alert(numprocess);
 }
 
 function back_main(){
@@ -35,8 +34,6 @@ function getValue(){
       y.push([tmpid, parseInt(tmpat), parseInt(tmpbt)]);
       backupOfY.push([tmpid, parseInt(tmpat), parseInt(tmpbt)]);
   }
-  //alert the output para malaman kung maayos ba
-  alert(y);
   //run function para magenerate na yung table.
   generateTable();
 }
@@ -48,7 +45,6 @@ function generateTable() {
   return a[1] - b[1];
   });
   //alert the output para malaman kung maayos ba
-  alert (y);
 
   var ctr = 0;
   var i = 0;
