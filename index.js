@@ -24,7 +24,14 @@ function back_main(){
 
 function getValue(){
   //empty variable array
-  y = []; totalBT = 0;
+  y = []; totalBT = 0, backupOfY = [], chartArray = [], completionTime = [], finalCT = [], tat = [], wt = [];
+
+  //check kung may table na ba sa site, kung meron idedelete niya para mareplace.
+  var myElem = document.getElementById('myTable');
+  if (myElem != null) {
+    document.getElementById("myTable").deleteRow(1);
+    document.getElementById("myTable").deleteRow(0);
+  }
   //get the value of every textbox then ilalagay sa array
   for (var i = 1; i <= numprocess; i++){
       tmpid = document.getElementById("main-table").rows[i].cells[0].innerHTML;
@@ -135,7 +142,7 @@ function generateTable() {
     tempavetat += tat[i];
   }
   tempavetat= tempavetat / tat.length;
-  document.getElementById("ave-tat").innerHTML = "Average Turnaround Time: " + tempavetat + "ms";
+  document.getElementById("ave-tat").innerHTML = "Average Turnaround Time: " + tempavetat.toFixed(2) + "ms";
 
   //print average wt
   var tempavewt = 0;
@@ -143,6 +150,6 @@ function generateTable() {
     tempavewt += wt[i];
   }
   tempavewt= tempavewt / tat.length;
-  document.getElementById("ave-wt").innerHTML = "Average Waiting Time: " + tempavewt + "ms";
+  document.getElementById("ave-wt").innerHTML = "Average Waiting Time: " + tempavewt.toFixed(2) + "ms";
 
 }
