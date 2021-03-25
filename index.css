@@ -170,10 +170,12 @@ th, td {
 }
 
 #go-button{
-  text-align: right;
-
-  padding: 5px;
+  padding: 0px;
   border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 #go-button button{

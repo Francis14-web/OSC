@@ -4,8 +4,13 @@ var tmpid;
 var tmpat;
 var tmpbt;
 var y = [];
+var backupOfY = [];
 var totalBT = 0;
 var chartArray = [];
+var completionTime = [];
+var finalCT = [];
+var tat = [];
+var wt = [];
 
 function processes(){
   numprocess = document.getElementById('num-process').value;
@@ -28,6 +33,7 @@ function getValue(){
       tmpbt = document.getElementById("main-table").rows[i].cells[2].getElementsByTagName('input')[0].value;
       //insert at the end of the array
       y.push([tmpid, parseInt(tmpat), parseInt(tmpbt)]);
+      backupOfY.push([tmpid, parseInt(tmpat), parseInt(tmpbt)]);
   }
   //alert the output para malaman kung maayos ba
   alert(y);
@@ -49,7 +55,7 @@ function generateTable() {
   while (ctr != y.length){
     var bt = y[ctr][2];
     var btctr = 0;
-    if (y[ctr][1] == i || i > y[ctr][1]){
+    if (y[ctr][1] == i || i >= y[ctr][1]){
       while(btctr < bt){
         chartArray.push(y[ctr][0]);
         btctr++;
@@ -60,8 +66,9 @@ function generateTable() {
     }
     i++;
   }
+  chartArray.push("");
 
-  alert(chartArray);
+  //create main table. Yung <table> </table>
   var a = document.createElement("TABLE");
   a.setAttribute("id", "myTable");
   a.setAttribute("align", "center");
@@ -69,23 +76,77 @@ function generateTable() {
   var b = document.createElement("TR");
   b.setAttribute("id", "ganttProc");
 
+  //loop para maprint yung gantt chart
+  var f = document.createElement("TR");
+  f.setAttribute("id", "ganttChart");
+  document.getElementById("myTable").appendChild(f);
   for (i=0; i < chartArray.length; i++){
-    var f = document.createElement("TR");
-    f.setAttribute("id", "ganttChart");
-    document.getElementById("myTable").appendChild(f);
     var g = document.createElement("TD");
     var h = document.createTextNode(chartArray[i]);
     g.appendChild(h);
     document.getElementById("ganttChart").appendChild(g);
   }
 
+  //loop para madisplay yung time
+  var f = document.createElement("TR");
+  f.setAttribute("id", "ganttTime");
+  document.getElementById("myTable").appendChild(f);
   for (i=0; i < chartArray.length; i++){
-    var f = document.createElement("TR");
-    f.setAttribute("id", "ganttTime");
-    document.getElementById("myTable").appendChild(f);
     var g = document.createElement("TD");
     var h = document.createTextNode(i);
     g.appendChild(h);
     document.getElementById("ganttTime").appendChild(g);
   }
+
+  //loop para makuha yung completion time
+  var getIndex = 0;
+  for (j=0; j < y.length; j++){
+    for (i=0; i < chartArray.length; i++ )
+      if (y[j][0] == chartArray[i]){
+        getIndex = i;
+      }
+      completionTime.push([y[j][0], getIndex + 1]);
+  }
+
+  //display sa table yung completion time
+  i = 0, j = 0;
+  while (i < y.length){
+    if (completionTime[i][0] == backupOfY[j][0]){
+      document.getElementById("main-table").rows[j+1].cells[3].innerHTML = completionTime[i][1];
+      finalCT.push(completionTime[i][1]);
+      i++;
+      j=0;
+    }
+    else {
+      j++;
+    }
+  }
+
+  //display tat and store the values inside an array
+  for (i = 0; i < backupOfY.length; i++){
+    tat.push(document.getElementById("main-table").rows[i+1].cells[3].innerHTML - backupOfY[i][1]);
+    document.getElementById("main-table").rows[i+1].cells[4].innerHTML = tat[i];
+  }
+
+  for (i = 0; i < backupOfY.length; i++){
+    wt.push(tat[i] - backupOfY[i][2]);
+    document.getElementById("main-table").rows[i+1].cells[5].innerHTML = wt[i];
+  }
+
+  //print average tat
+  var tempavetat = 0;
+  for (i = 0; i < tat.length; i++){
+    tempavetat += tat[i];
+  }
+  tempavetat= tempavetat / tat.length;
+  document.getElementById("ave-tat").innerHTML = "Average Turnaround Time: " + tempavetat + "ms";
+
+  //print average wt
+  var tempavewt = 0;
+  for (i = 0; i < tat.length; i++){
+    tempavewt += wt[i];
+  }
+  tempavewt= tempavewt / tat.length;
+  document.getElementById("ave-wt").innerHTML = "Average Waiting Time: " + tempavewt + "ms";
+
 }
