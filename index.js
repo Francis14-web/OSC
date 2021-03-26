@@ -58,16 +58,17 @@ function generateTable() {
   while (ctr != y.length){
     var bt = y[ctr][2];
     var btctr = 0;
-    if (y[ctr][1] == i || i >= y[ctr][1]){
+
+    if (i >= y[ctr][1]){
       while(btctr < bt){
         chartArray.push(y[ctr][0]);
-        btctr++;
+        btctr++; i++;
       }
       ctr++;
     } else {
       chartArray.push("");
+      i++;
     }
-    i++;
   }
   chartArray.push("");
 

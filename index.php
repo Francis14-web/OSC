@@ -26,7 +26,7 @@
         }
         ?>
         <?php
-        if (isset($_POST['submit']))
+          if (isset($_POST['submit']))
         {
         ?>
           <script>
