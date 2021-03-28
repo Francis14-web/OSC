@@ -68,11 +68,17 @@ input::-webkit-inner-spin-button {
     opacity: 1;
   }
 }
+#arrow{
+  margin: 32px;
+  padding-left:  131px;
+  position: absolute;
+}
 
 #proc h1{
   padding: 0;
   margin: 0;
   font-size: 35px;
+
 }
 
 #proc{
@@ -84,6 +90,9 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   justify-content: space-around;
   border-style: solid;
+  box-shadow: 0 0 10px #00b3ff,
+              0 0 20px #00b3ff,
+              0 0 30px #00b3ff;
   border-radius: 15px;
   align-self: center;
   align-items: center;
@@ -93,28 +102,58 @@ input::-webkit-inner-spin-button {
   margin: 25px 0px;
 }
 
-#process-submit{
+#process-submit {
   cursor: pointer;
-  background: #FFC300;
-  border: none;
-  border-radius: 3px;
-  margin-left: 5px;
   outline: 0;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 5px;
+  margin-right: 25px;
+  position: relative;
   width: 100%;
   height: 35px;
-  text-transform: uppercase;
-  letter-spacing: 10px;
-  font-weight: bold;
+  background: linear-gradient(90deg,#03a9f4,#f441a5, #ffeb3b, #03a9f4);
   font-family: Poppins, sans-serif;
-  margin: 0;
+  font-weight: bolder;
+  letter-spacing: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-style: none;
+  border-radius: 25px;
+  color: #fff;
+  background-size: 300%;
+  z-index: 1;
+  animation: animate 3s linear infinite;
 }
 
-#process-submit:hover{
-  transition: ease .5s;
-  color: white;
-  box-shadow: 0 0 7px 0 rgba(0,0,0,.5);
-  background: #997500;
+@keyframes animate {
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 300%;
+  }
 }
+
+#process-submit:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(90deg,#03a9f4,#f441a5, #ffeb3b, #03a9f4);
+  background-size: 300%;
+  border-radius: 25px;
+}
+
+#process-submit:hover:before {
+  filter: blur(15px);
+  opacity: 1;
+  animation: animate 3s linear infinite;
+}
+
 
 
 #input-page{
@@ -148,15 +187,21 @@ input::-webkit-inner-spin-button {
 table, th, td {
   border: 1px solid white;
   text-align: center;
+  box-shadow: 0 0 3px #00b3ff,
+              0 0 5px #00b3ff,
+              0 0 7px #00b3ff;
+
 }
 
 table{
-  border-collapse: collapse;
   border-radius: 10px;
+  border-collapse: collapse;
+
 }
 
 th, td {
   padding: 8px;
+
 }
 
 #process-id{
@@ -169,30 +214,59 @@ th, td {
   text-align: center;
 }
 
-#go-button{
+#ave{
   padding: 0px;
-  border-radius: 3px;
+  border-radius: 15px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+
 }
 
-#go-button button{
-  background-color: #00A8AF;
+#go-button {
+  cursor: pointer;
+  position: relative;
+  background: linear-gradient(90deg,#03a9f4,#f441a5, #ffeb3b, #03a9f4);
   border: none;
-  border-radius: 3px;
+  border-radius: 15px;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 15px;
+  width: 150px;
+  letter-spacing: 3px;
+  outline: 0;
   padding: 6px 10px;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
   color: white;
+  background-size: 300%;
+  z-index: 1;
+  animation: animate 3s linear infinite;
 }
 
-#go-button button:hover{
-  transition: ease .5s;
-  background-color: #226D86;
-  color: lightgray;
+@keyframes animate {
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 300%;
+  }
 }
+#go-button:before{
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  background: linear-gradient(90deg,#03a9f4,#f441a5, #ffeb3b, #03a9f4);
+  background-size: 300%;
+  border-radius: 15px;
+}
+
+
 
 #myTable td{
   width: 25px;
@@ -200,4 +274,5 @@ th, td {
 
 #myTable{
   margin-top: 30px;
+
 }

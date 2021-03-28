@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+html,body{
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  color: white;
+  background-size: 500% 500%;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-image: -o-linear-gradient(
+              315deg,
+              #000039 0%,
+              #310039 29%,
+              #630039 67%,
+              #940039 100%);
+          background-image: linear-gradient(
+              -225deg,
+              #000039 0%,
+              #310039 29%,
+              #630039 67%,
+              #940039 100%);
+          -webkit-animation: change_bg 15s linear infinite;
+                  animation: change_bg 15s linear infinite;
+      }
+      @-webkit-keyframes change_bg{
+          50%{
+              background-position: 100% 100%;
+          }
+      }
+      @keyframes change_bg{
+          50%{
+              background-position: 100% 100%;
+          }
+      }
+#intro{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      animation: ease-out slideLeftToRight .5s;
+  }
+
+  @keyframes slideLeftToRight{
+    0%{
+      transform: translate(30%);
+      opacity: 0;
+    }
+    100%{
+      transform: translate(0%);
+      opacity: 1;
+    }
+  }
+
+#intro{
+  display: block;
+}
+
+#intro p{
+ text-align: center;
+}
+#lahat{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.card{
+  float: left;
+  margin: 5px;
+  margin-top: 25px;
+  margin-left: 25px;
+  border: 2px solid silver;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0 0 5px  #FD1C03,
+              0 0 10px  #FD1C03,
+              0 0 15px  #FD1C03;
+  float: left;
+  width: 300px;
+
+
+}
+.card p{
+ text-align: left;
+ margin-left: 15px;
+}
+.card img{
+  padding-left: 10px;
+  border-top-left-radius:  18px;
+  border-top-right-radius:  15px;
+  margin-left: -9px;
+}
+.card1{
+  float: left;
+  margin: 5px;
+  margin-top: 25px;
+  margin-left: 25px;
+  border: 2px solid silver;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0 0 5px  #39FF14,
+              0 0 10px  #39FF14,
+              0 0 15px  #39FF14;
+  float: left;
+  width: 300px;
+
+
+}
+.card1 p{
+ text-align: left;
+ margin-left: 15px;
+}
+.card1 img{
+  padding-left: 10px;
+  border-top-left-radius:  18px;
+  border-top-right-radius:  15px;
+  margin-left: -9px;
+}
+.card2{
+  float: left;
+  margin: 5px;
+  margin-top: 25px;
+  margin-left: 25px;
+  border: 2px solid silver;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0 0 5px  #011ffd,
+              0 0 10px #011ffd,
+              0 0 15px #011ffd;
+  float: left;
+  float: left;
+  width: 300px;
+
+
+}
+.card2 p{
+ text-align: left;
+ margin-left: 15px;
+}
+.card2 img{
+  padding-left: 10px;
+  border-top-left-radius:  18px;
+  border-top-right-radius:  15px;
+  margin-left: -9px;
+}
+
+#head{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#head h1{
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+#back{
+  padding:7px 13px;
+  cursor: pointer;
+  background: transparent;
+  border-color: white;
+  border-style: solid;
+  border-radius: 25px;
+  color: white;
+  outline: 0;
+}

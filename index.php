@@ -3,6 +3,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <script src="index.js" type="text/javascript"></script>
@@ -10,6 +11,12 @@
   session_start();
   ?>
   <section id="processes">
+    <div id="arrow">
+      <a href="welcome.php">
+        <button id="back"><i class="fa fa-angle-left" style="margin-right: 15px; font-size: 15px;"></i>Back</button>
+      </a>
+      <button id="back" style="visibility: hidden;"><i class="fa fa-angle-left" style="margin-right: 15px; font-size: 15px;"></i>Back</button>
+    </div>
     <div id="proc">
       <header>
         <h1>
@@ -26,7 +33,7 @@
         }
         ?>
         <?php
-          if (isset($_POST['submit']))
+        if (isset($_POST['submit']))
         {
         ?>
           <script>
