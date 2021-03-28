@@ -8,7 +8,7 @@
 <body>
   <section id="intro">
     <div id="head">
-    <a href="welcome.php">
+    <a href="index.php">
       <button id="back"><i class="fa fa-angle-left" style="margin-right: 15px; font-size: 15px;"></i>Back</button>
     </a>
       <header>
@@ -25,17 +25,17 @@
     </p>
     <div id="lahat">
       <div class="card">
-        <img src="https://dormammuuuuu.github.io/images/santos_tech/francis.png" width="299">
+        <img src="https://dormammuuuuu.github.io/images/santos_tech/francis.png" >
           <p>Francis Edian M. Panaligan</p>
           <p>Programmer</p>
       </div>
       <div class="card1">
-        <img src="https://dormammuuuuu.github.io/images/santos_tech/jerico.jpg" width="299">
+        <img src="https://dormammuuuuu.github.io/images/santos_tech/jerico.jpg" >
           <p>Jerico M. Victoria</p>
           <p>Lead Programmer</p>
       </div>
       <div class="card2">
-        <img src="https://dormammuuuuu.github.io/images/santos_tech/ramino.jpg" width="299" height="300">
+        <img src="https://dormammuuuuu.github.io/images/santos_tech/ramino.jpg" >
         <p>Ramino Jake Santos</p>
         <p>Programmer</p>
       </div>

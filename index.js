@@ -19,7 +19,7 @@ function processes(){
 
 function back_main(){
   numprocess = 0;
-  window.location.href = 'index.php';
+  window.location.href = 'process.php';
 }
 
 function getValue(){

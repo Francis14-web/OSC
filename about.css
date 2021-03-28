@@ -59,7 +59,7 @@ html,body{
 }
 
 #intro p{
- text-align: center;
+  text-align: center;
 }
 
 #lahat{
@@ -68,7 +68,7 @@ html,body{
   justify-content: center;
 }
 
-.card{
+.card, .card1, .card2{
   float: left;
   margin: 5px;
   margin-top: 25px;
@@ -83,12 +83,13 @@ html,body{
   width: 300px;
 }
 
-.card p{
- text-align: left;
- margin-left: 15px;
+
+.card p, .card1 p, .card2 p{
+  text-align: left;
+  margin-left: 15px;
 }
 
-.card img{
+.card img, .card1 img, .card2 img{
   padding-left: 10px;
   border-top-left-radius:  18px;
   border-top-right-radius:  15px;
@@ -96,58 +97,15 @@ html,body{
 }
 
 .card1{
-  float: left;
-  margin: 5px;
-  margin-top: 25px;
-  margin-left: 25px;
-  border: 2px solid silver;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
   box-shadow: 0 0 5px  #39FF14,
               0 0 10px  #39FF14,
               0 0 15px  #39FF14;
-  float: left;
-  width: 300px;
-}
-
-.card1 p{
- text-align: left;
- margin-left: 15px;
-}
-
-.card1 img{
-  padding-left: 10px;
-  border-top-left-radius:  18px;
-  border-top-right-radius:  15px;
-  margin-left: -9px;
 }
 
 .card2{
-  float: left;
-  margin: 5px;
-  margin-top: 25px;
-  margin-left: 25px;
-  border: 2px solid silver;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
   box-shadow: 0 0 5px  #011ffd,
               0 0 10px #011ffd,
               0 0 15px #011ffd;
-  float: left;
-  float: left;
-  width: 300px;
-}
-
-.card2 p{
- text-align: left;
- margin-left: 15px;
-}
-
-.card2 img{
-  padding-left: 10px;
-  border-top-left-radius:  18px;
-  border-top-right-radius:  15px;
-  margin-left: -9px;
 }
 
 #head{
@@ -171,4 +129,11 @@ html,body{
   border-radius: 25px;
   color: white;
   outline: 0;
+}
+
+img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
 }
