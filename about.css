@@ -24,34 +24,35 @@ html,body{
               #940039 100%);
           -webkit-animation: change_bg 15s linear infinite;
                   animation: change_bg 15s linear infinite;
-      }
-      @-webkit-keyframes change_bg{
-          50%{
-              background-position: 100% 100%;
-          }
-      }
-      @keyframes change_bg{
-          50%{
-              background-position: 100% 100%;
-          }
-      }
-#intro{
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      animation: ease-out slideLeftToRight .5s;
-  }
+    }
+@-webkit-keyframes change_bg{
+    50%{
+        background-position: 100% 100%;
+    }
+}
+@keyframes change_bg{
+    50%{
+        background-position: 100% 100%;
+    }
+}
 
-  @keyframes slideLeftToRight{
-    0%{
-      transform: translate(30%);
-      opacity: 0;
-    }
-    100%{
-      transform: translate(0%);
-      opacity: 1;
-    }
+#intro{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  animation: ease-out slideLeftToRight .5s;
+}
+
+@keyframes slideLeftToRight{
+  0%{
+    transform: translate(30%);
+    opacity: 0;
   }
+  100%{
+    transform: translate(0%);
+    opacity: 1;
+  }
+}
 
 #intro{
   display: block;
@@ -60,11 +61,13 @@ html,body{
 #intro p{
  text-align: center;
 }
+
 #lahat{
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
+
 .card{
   float: left;
   margin: 5px;
@@ -78,19 +81,20 @@ html,body{
               0 0 15px  #FD1C03;
   float: left;
   width: 300px;
-
-
 }
+
 .card p{
  text-align: left;
  margin-left: 15px;
 }
+
 .card img{
   padding-left: 10px;
   border-top-left-radius:  18px;
   border-top-right-radius:  15px;
   margin-left: -9px;
 }
+
 .card1{
   float: left;
   margin: 5px;
@@ -104,19 +108,20 @@ html,body{
               0 0 15px  #39FF14;
   float: left;
   width: 300px;
-
-
 }
+
 .card1 p{
  text-align: left;
  margin-left: 15px;
 }
+
 .card1 img{
   padding-left: 10px;
   border-top-left-radius:  18px;
   border-top-right-radius:  15px;
   margin-left: -9px;
 }
+
 .card2{
   float: left;
   margin: 5px;
@@ -131,13 +136,13 @@ html,body{
   float: left;
   float: left;
   width: 300px;
-
-
 }
+
 .card2 p{
  text-align: left;
  margin-left: 15px;
 }
+
 .card2 img{
   padding-left: 10px;
   border-top-left-radius:  18px;
@@ -156,6 +161,7 @@ html,body{
   font-size: 30px;
   letter-spacing: 5px;
 }
+
 #back{
   padding:7px 13px;
   cursor: pointer;

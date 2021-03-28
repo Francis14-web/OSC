@@ -12,9 +12,7 @@
   ?>
   <section id="processes">
     <div id="arrow">
-      <a href="welcome.php">
-        <button id="back"><i class="fa fa-angle-left" style="margin-right: 15px; font-size: 15px;"></i>Back</button>
-      </a>
+      <a href="welcome.php"><button id="back"><i class="fa fa-angle-left" style="margin-right: 15px; font-size: 15px;"></i>Back</button></a>
       <button id="back" style="visibility: hidden;"><i class="fa fa-angle-left" style="margin-right: 15px; font-size: 15px;"></i>Back</button>
     </div>
     <div id="proc">

@@ -182,6 +182,8 @@ input::-webkit-inner-spin-button {
   padding: 7px 13px;
   height: fit-content;
   outline: 0;
+  text-decoration: none;
+  font-family: sans-serif;
 }
 
 table, th, td {
