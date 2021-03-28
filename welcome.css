@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+
 html,body{
   overflow-x: hidden;
   padding: 0;
@@ -61,21 +62,19 @@ html,body{
     font-family: Rubik;
     color: #fff;
     font-size: 100px;
-
 }
 
 p{
-  padding: 0px;
-  padding-bottom: 25px;
+  padding: 0;
+  padding-bottom: 15px;
   margin: 0px;
-  margin-top: -10px;
   font-size: 25px;
   text-align: center;
   font-weight: bolder;
   font-style: oblique;
-  color: #FFD300
-
+  color: #FFD300;
 }
+
 #welcome{
   padding: 30px;
   margin: auto;
@@ -93,8 +92,6 @@ p{
   align-self: center;
   align-items: center;
 }
-
-
 
 #cpustart{
   cursor: pointer;
@@ -114,6 +111,7 @@ p{
   background-size: 400%;
   z-index: 1;
 }
+
 #cpustart:hover{
   animation: animate 3s linear infinite;
 }
@@ -139,6 +137,7 @@ p{
   background-size: 400%;
   border-radius: 25px;
 }
+
 #cpustart:hover:before{
   filter: blur(15px);
   opacity: 1;

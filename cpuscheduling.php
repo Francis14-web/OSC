@@ -47,7 +47,6 @@
       <tr>
         <td colspan="6"><div id="ave"><span id="ave-tat">Average Turnaround Time: Undefined</span> <span id="ave-wt"> Average Waiting Time: Undefined</span></div></td>
       </tr>
-
     </table>
     <input type="submit" onclick="getValue()" value="GO" id="go-button">
       </script>

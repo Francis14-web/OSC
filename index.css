@@ -190,18 +190,15 @@ table, th, td {
   box-shadow: 0 0 3px #00b3ff,
               0 0 5px #00b3ff,
               0 0 7px #00b3ff;
-
 }
 
 table{
   border-radius: 10px;
   border-collapse: collapse;
-
 }
 
 th, td {
   padding: 8px;
-
 }
 
 #process-id{
@@ -221,7 +218,6 @@ th, td {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-
 }
 
 #go-button {
@@ -241,7 +237,6 @@ th, td {
   font-family: 'Poppins', sans-serif;
   color: white;
   background-size: 300%;
-  z-index: 1;
   animation: animate 3s linear infinite;
 }
 
@@ -253,6 +248,7 @@ th, td {
     background-position: 300%;
   }
 }
+
 #go-button:before{
   content: '';
   position: absolute;
@@ -265,8 +261,6 @@ th, td {
   background-size: 300%;
   border-radius: 15px;
 }
-
-
 
 #myTable td{
   width: 25px;
