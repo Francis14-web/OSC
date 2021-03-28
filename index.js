@@ -11,6 +11,7 @@ var completionTime = [];
 var finalCT = [];
 var tat = [];
 var wt = [];
+var inputValidator;
 
 function processes(){
   numprocess = document.getElementById('num-process').value;
@@ -25,7 +26,7 @@ function back_main(){
 function getValue(){
   //empty variable array
   y = []; totalBT = 0, backupOfY = [], chartArray = [], completionTime = [], finalCT = [], tat = [], wt = [];
-
+  inputValidator = true;
   //check kung may table na ba sa site, kung meron idedelete niya para mareplace.
   var myElem = document.getElementById('myTable');
   if (myElem != null) {
@@ -38,11 +39,22 @@ function getValue(){
       tmpat = document.getElementById("main-table").rows[i].cells[1].getElementsByTagName('input')[0].value;
       tmpbt = document.getElementById("main-table").rows[i].cells[2].getElementsByTagName('input')[0].value;
       //insert at the end of the array
-      y.push([tmpid, parseInt(tmpat), parseInt(tmpbt)]);
-      backupOfY.push([tmpid, parseInt(tmpat), parseInt(tmpbt)]);
+      if(tmpid == "" || tmpat == "" || tmpbt == ""){
+        inputValidator = false;
+        break;
+      }
+      else{
+        y.push([tmpid, parseInt(tmpat), parseInt(tmpbt)]);
+        backupOfY.push([tmpid, parseInt(tmpat), parseInt(tmpbt)]);
+      }
   }
   //run function para magenerate na yung table.
-  generateTable();
+  if (inputValidator == true){
+    generateTable();
+  }
+  else {
+    alert("Please fill all required fields");
+  }
 }
 
 function generateTable() {
