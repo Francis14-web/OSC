@@ -96,11 +96,26 @@ function generateTable() {
   var f = document.createElement("TR");
   f.setAttribute("id", "ganttChart");
   document.getElementById("myTable").appendChild(f);
+  alert(chartArray);
   for (i=0; i < chartArray.length; i++){
+    var c_span = 0;
     var g = document.createElement("TD");
-    var h = document.createTextNode(chartArray[i]);
-    g.appendChild(h);
-    document.getElementById("ganttChart").appendChild(g);
+    if (chartArray[i] == ""){
+      var h = document.createTextNode(chartArray[i]);
+      g.appendChild(h);
+      document.getElementById("ganttChart").appendChild(g);
+    } else {
+      var tempContainer = chartArray[i];
+      while (chartArray[i] == tempContainer){
+        c_span++;
+        i++;
+      }
+      i-=1;
+      var h = document.createTextNode(chartArray[i]);
+      g.setAttribute("colspan", c_span);
+      g.appendChild(h);
+      document.getElementById("ganttChart").appendChild(g);
+    }
   }
 
   //loop para madisplay yung time
