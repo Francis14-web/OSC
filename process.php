@@ -25,7 +25,8 @@
         <label for="ddown">
           <select id="dropdown" name="ddown" class="dropdown_style" required>
             <option disabled selected value>Select an algorithm</option>
-            <option value="yes">FCFS</option>
+            <option value="fcfs">First come, First served</option>
+            <option value="sjf">Shortest Job First (Non-preemptive)</option>
           </select>
         </label></br>
         <label for="num-process">Number of Processes:</label>
@@ -34,6 +35,7 @@
         <?php
         if(isset($_POST['submit'])&&isset($_POST['number_of_proc'])) {
            $_SESSION['superhero'] = $_POST['number_of_proc'];
+           $_SESSION['algorithm'] = $_POST['ddown'];
         }
         ?>
         <?php

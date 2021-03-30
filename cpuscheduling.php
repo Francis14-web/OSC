@@ -12,8 +12,13 @@
   session_start();
   if (isset($_SESSION['superhero'])) {
     $numprocess = $_SESSION['superhero'];
+    $algorithm = $_SESSION['algorithm'];
   }
   ?>
+  <script type="text/javascript">
+    var numprocess = "<?php echo $numprocess; ?>";
+    var algo = "<?php echo $algorithm; ?>";
+  </script>
   <section id="input-page">
     <div id="nav">
       <button id="back" onclick="back_main()"><i class="fa fa-angle-left" style="margin-right: 15px; font-size: 15px;"></i>Back</button>
@@ -30,27 +35,24 @@
         <th>Turnaround Time</th>
         <th>Wait Time</th>
       </tr>
+
       <?php
       for ($i = 0; $i < $numprocess; $i++){
-        echo "<tr id=\"table-val\">";
-        echo "<td> P".$i +  1 ."</td>";
-        echo "<td> <input type=\"number\" placeholder=\"0\" id=\"process-id\" min=\"1\" maxlength=\"3\"> </td>";
-        echo "<td> <input type=\"number\" placeholder=\"0\" id=\"process-id\" min=\"0\" maxlength=\"3\"> </td>";
-        echo "<td> </td>";
-        echo "<td> </td>";
-        echo "<td> </td>";
-        echo"</tr>";
+        echo '<tr id="table-val">';
+        echo '<td> P'.$i +  1 .'</td>';
+        echo '<td> <input type="number" placeholder="0" id="process-id" min="1" maxlength="3"> </td>';
+        echo '<td> <input type="number" placeholder="0" id="process-id" min="0" maxlength="3"> </td>';
+        echo '<td> </td>';
+        echo '<td> </td>';
+        echo '<td> </td>';
+        echo '</tr>';
       }
       ?>
-      <script type="text/javascript">
-        var numprocess = "<?php echo $numprocess; ?>";
-      </script>
       <tr>
         <td colspan="6"><div id="ave"><span id="ave-tat">Average Turnaround Time: Undefined</span> <span id="ave-wt"> Average Waiting Time: Undefined</span></div></td>
       </tr>
     </table>
     <input type="submit" onclick="getValue()" value="GO" id="go-button">
-      </script>
     </div>
   </section>
 </body>
