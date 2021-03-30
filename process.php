@@ -34,7 +34,7 @@
         <input type="submit" name="submit" value="START" id="process-submit">
         <?php
         if(isset($_POST['submit'])&&isset($_POST['number_of_proc'])) {
-           $_SESSION['superhero'] = $_POST['number_of_proc'];
+           $_SESSION['nump'] = $_POST['number_of_proc'];
            $_SESSION['algorithm'] = $_POST['ddown'];
         }
         ?>

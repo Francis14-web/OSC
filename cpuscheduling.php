@@ -10,10 +10,8 @@
   <script src="index.js" type="text/javascript"></script>
   <?php
   session_start();
-  if (isset($_SESSION['superhero'])) {
-    $numprocess = $_SESSION['superhero'];
-    $algorithm = $_SESSION['algorithm'];
-  }
+  $numprocess = $_SESSION['nump'];
+  $algorithm = $_SESSION['algorithm'];
   ?>
   <script type="text/javascript">
     var numprocess = "<?php echo $numprocess; ?>";
