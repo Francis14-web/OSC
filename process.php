@@ -22,6 +22,12 @@
         </h1>
       </header>
       <form method="POST" onsubmit="processes()">
+        <label for="ddown">
+          <select id="dropdown" name="ddown" class="dropdown_style" required>
+            <option disabled selected value>Select an algorithm</option>
+            <option value="yes">FCFS</option>
+          </select>
+        </label></br>
         <label for="num-process">Number of Processes:</label>
         <input id="num-process" type="number" min="1" max="10" placeholder="Enter a number" name="number_of_proc" required><br/>
         <input type="submit" name="submit" value="START" id="process-submit">

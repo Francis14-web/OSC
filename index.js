@@ -12,6 +12,7 @@ var finalCT = [];
 var tat = [];
 var wt = [];
 var inputValidator;
+var colors = ["yellow","orange","red","pink","violet","blue","lblue","lgreen","green","lime"];
 
 function processes(){
   numprocess = document.getElementById('num-process').value;
@@ -97,9 +98,11 @@ function generateTable() {
   f.setAttribute("id", "ganttChart");
   document.getElementById("myTable").appendChild(f);
   alert(chartArray);
+  var j = 0;
   for (i=0; i < chartArray.length; i++){
     var c_span = 0;
     var g = document.createElement("TD");
+    //para sa column span.
     if (chartArray[i] == ""){
       var h = document.createTextNode(chartArray[i]);
       g.appendChild(h);
@@ -113,6 +116,8 @@ function generateTable() {
       i-=1;
       var h = document.createTextNode(chartArray[i]);
       g.setAttribute("colspan", c_span);
+      g.setAttribute("class", colors[j]);
+      j++; //increment j para sa next color;
       g.appendChild(h);
       document.getElementById("ganttChart").appendChild(g);
     }
