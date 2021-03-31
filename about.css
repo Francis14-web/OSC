@@ -69,32 +69,27 @@ html,body{
 }
 
 .card, .card1, .card2{
-  float: left;
-  margin: 5px;
-  margin-top: 25px;
-  margin-left: 25px;
+  margin: 25px 15px;
   border: 2px solid silver;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   box-shadow: 0 0 5px  #FD1C03,
               0 0 10px  #FD1C03,
               0 0 15px  #FD1C03;
-  float: left;
   width: 300px;
+  overflow:hidden;
 }
 
+#p_name{
+  font-weight: bolder;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
 
 .card p, .card1 p, .card2 p{
-  text-align: left;
   margin-left: 15px;
 }
 
-.card img, .card1 img, .card2 img{
-  padding-left: 10px;
-  border-top-left-radius:  18px;
-  border-top-right-radius:  15px;
-  margin-left: -9px;
-}
 
 .card1{
   box-shadow: 0 0 5px  #39FF14,

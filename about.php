@@ -25,18 +25,18 @@
     </p>
     <div id="lahat">
       <div class="card">
-        <img src="https://dormammuuuuu.github.io/images/santos_tech/francis.png" >
-          <p>Francis Edian M. Panaligan</p>
+        <img src="https://dormammuuuuu.github.io/images/santos_tech/francis.png" alt="Francis Panaligan" >
+          <p id="p_name">Francis Edian M. Panaligan</p>
           <p>Programmer</p>
       </div>
       <div class="card1">
-        <img src="https://dormammuuuuu.github.io/images/santos_tech/jerico.jpg" >
-          <p>Jerico M. Victoria</p>
+        <img src="https://dormammuuuuu.github.io/images/santos_tech/jerico.jpg" alt="Jerico Victoria">
+          <p id="p_name">Jerico M. Victoria</p>
           <p>Lead Programmer</p>
       </div>
       <div class="card2">
-        <img src="https://dormammuuuuu.github.io/images/santos_tech/ramino.jpg" >
-        <p>Ramino Jake Santos</p>
+        <img src="https://dormammuuuuu.github.io/images/santos_tech/ramino.jpg" alt="Ramino Santos">
+        <p id="p_name">Ramino Jake Santos</p>
         <p>Programmer</p>
       </div>
     </div>
