@@ -52,7 +52,7 @@ input[type=number], .dropdown_style{
   height: 29px;
   padding: 0px;
   margin-top: 15px;
-  
+
 }
 
 input::-webkit-outer-spin-button,
@@ -290,4 +290,12 @@ th, td {
 #myTable{
   margin-top: 30px;
   margin-bottom: 100px;
+}
+
+#desc-title{
+  text-align: center;
+  margin: auto;
+  margin-bottom: 25px;
+  width: 60%;
+
 }

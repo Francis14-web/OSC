@@ -23,6 +23,7 @@
       <h1 id="algo-title"> CPU Scheduling </h1>
       <button id="back" style="visibility: hidden;"><i class="fa fa-angle-left" style="margin-right: 15px; font-size: 15px;"></i>Back</button>
     </div>
+    <p id="desc-title"> Description </p>
     <div id="input-table">
       <table style="width:80%" align="center" id="main-table">
       <tr>

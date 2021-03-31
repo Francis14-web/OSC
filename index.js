@@ -6,16 +6,23 @@ var totalBT = 0;
 var inputValidator;
 var repeat = false;
 var colors = ["yellow","orange","red","pink","violet","blue","lblue","lgreen","green","lime"];
-var algoTitle;
+var algoTitle, descTitle;
 
 function load_title(){
-  if(algo == "fcfs")
+  if(algo == "fcfs"){
     algoTitle = "First come, First Served";
-  else if(algo == "sjf")
+    descTitle = "First Come First Serve (FCFS) is an operating system scheduling algorithm that automatically executes queued requests and processes in order of their arrival.  It is the easiest and simplest CPU scheduling algorithm.";
+  }
+  else if(algo == "sjf"){
     algoTitle = "Shortest Job First";
-  else
+    descTitle = "Shortest Job First (SJF) is an algorithm in which the process having the smallest execution time is chosen for the next execution. This scheduling method can be preemptive or non-preemptive.  It significantly reduces the average waiting time for other processes awaiting execution. The full form of SJF is Shortest Job First.";
+  }
+  else{
     algoTitle = "Non-preemptive Priority";
+    descTitle = " The Processes are scheduled according to the priority number assigned to them. Once the process gets scheduled, it will run till the completion. Generally, the lower the priority number, the higher is the priority of the process.";
+  }
   document.getElementById('algo-title').innerHTML = algoTitle;
+  document.getElementById('desc-title').innerHTML = descTitle;
 }
 
 function processes(){
