@@ -120,7 +120,6 @@ input[type=number] {
   outline: 0;
   padding: 5px;
   padding-left: 15px;
-  padding-right: 5px;
   margin-right: 25px;
   position: relative;
   width: 100%;
@@ -208,6 +207,7 @@ table, th, td {
 }
 
 table{
+  table-layout: fixed;
   border-radius: 10px;
   border-collapse: collapse;
 }
@@ -217,13 +217,15 @@ th, td {
 }
 
 #process-id{
-  width: inherit;
+  width: 100%;
   height: inherit;
   background: transparent;
   outline: 0;
   color: white;
   border: none;
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 #ave{
