@@ -17,6 +17,13 @@
     var numprocess = "<?php echo $numprocess; ?>";
     var algo = "<?php echo $algorithm; ?>";
   </script>
+  <div class="container demo">
+   <div class="content">
+      <div id="large-header" class="large-header">
+         <canvas id="demo-canvas"></canvas>
+      </div>
+   </div>
+  </div>
   <section id="input-page">
     <div id="nav">
       <button id="back" onclick="back_main()"><i class="fa fa-angle-left" style="margin-right: 15px; font-size: 15px;"></i>Back</button>
@@ -68,5 +75,8 @@
     <input type="submit" onclick="getValue()" value="GO" id="go-button">
     </div>
   </section>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+  <script src="mouseeffect.js"></script>
 </body>
 </html>

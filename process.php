@@ -10,6 +10,13 @@
   <?php
     session_start();
   ?>
+  <div class="container demo">
+   <div class="content">
+      <div id="large-header" class="large-header">
+         <canvas id="demo-canvas"></canvas>
+      </div>
+   </div>
+  </div>
   <section id="processes">
     <div id="arrow">
       <a href="index.php"><button id="back"><i class="fa fa-angle-left" style="margin-right: 15px; font-size: 15px;"></i>Back</button></a>
@@ -52,5 +59,8 @@
         </form>
     </div>
   </section>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+  <script src="mouseeffect.js"></script>
 </body>
 </html>

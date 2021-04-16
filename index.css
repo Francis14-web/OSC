@@ -9,10 +9,45 @@ html,body{
   margin: 0;
   font-family: Poppins, sans-serif;
   color: white;
-  background-size: 500% 500%;
   position: absolute;
   width: 100vw;
   height: 100vh;
+}
+
+@-webkit-keyframes change_bg{
+    50%{
+        background-position: 100% 100%;
+    }
+}
+@keyframes change_bg{
+    50%{
+        background-position: 100% 100%;
+    }
+}
+
+
+#Greet{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    animation: ease-out slideLeftToRight .5s;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes slideLeftToRight{
+  0%{
+    transform: translate(30%);
+    opacity: 0;
+  }
+  100%{
+    transform: translate(0%);
+    opacity: 1;
+  }
+}
+
+html, body, #welcome{
+  background-size: 500% 500%;
   background-image: -o-linear-gradient(
               315deg,
               #000039 0%,
@@ -27,35 +62,6 @@ html,body{
               #940039 100%);
           -webkit-animation: change_bg 15s linear infinite;
                   animation: change_bg 15s linear infinite;
-      }
-      @-webkit-keyframes change_bg{
-          50%{
-              background-position: 100% 100%;
-          }
-      }
-      @keyframes change_bg{
-          50%{
-              background-position: 100% 100%;
-          }
-      }
-
-
-#Greet{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    animation: ease-out slideLeftToRight .5s;
-}
-
-@keyframes slideLeftToRight{
-  0%{
-    transform: translate(30%);
-    opacity: 0;
-  }
-  100%{
-    transform: translate(0%);
-    opacity: 1;
-  }
 }
 
 ::-webkit-scrollbar {
@@ -149,4 +155,23 @@ p{
   filter: blur(15px);
   opacity: 1;
   animation: animate 3s linear infinite;
+}
+
+.large-header {
+   position: absolute;
+   width: 100%;
+   background: #111;
+   overflow: hidden;
+   background-size: cover;
+   background-position: center center;
+   z-index: 1;
+}
+
+.demo .large-header {
+   background-color: transparent;
+}
+
+.container .demo{
+  position: absolute;
+  z-index: 2;
 }

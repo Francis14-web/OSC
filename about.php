@@ -6,6 +6,13 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 <body>
+  <div class="container demo">
+   <div class="content">
+      <div id="large-header" class="large-header">
+         <canvas id="demo-canvas"></canvas>
+      </div>
+   </div>
+  </div>
   <section id="intro">
     <div id="head">
     <a href="index.php">
@@ -41,5 +48,8 @@
       </div>
     </div>
   </section>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+  <script src="mouseeffect.js"></script>
 </body>
 </html>

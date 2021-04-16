@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 html,body{
   overflow-x: hidden;
@@ -6,10 +6,13 @@ html,body{
   margin: 0;
   font-family: Poppins, sans-serif;
   color: white;
-  background-size: 500% 500%;
   position: absolute;
   width: 100vw;
   height: 100vh;
+}
+
+html, body, #welcome, .card, .card1, .card2{
+  background-size: 500% 500%;
   background-image: -o-linear-gradient(
               315deg,
               #000039 0%,
@@ -24,7 +27,9 @@ html,body{
               #940039 100%);
           -webkit-animation: change_bg 15s linear infinite;
                   animation: change_bg 15s linear infinite;
-    }
+}
+
+
 @-webkit-keyframes change_bg{
     50%{
         background-position: 100% 100%;
@@ -37,6 +42,8 @@ html,body{
 }
 
 #intro{
+  position: relative;
+  z-index: 1;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -131,4 +138,23 @@ img{
   height: 300px;
   object-fit: cover;
   object-position: center;
+}
+
+.large-header {
+   position: absolute;
+   width: 100%;
+   background: #111;
+   overflow: hidden;
+   background-size: cover;
+   background-position: center center;
+   z-index: 1;
+}
+
+.demo .large-header {
+   background-color: transparent;
+}
+
+.container .demo{
+  position: absolute;
+  z-index: 2;
 }
