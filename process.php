@@ -8,7 +8,7 @@
 <body>
   <script src="index.js" type="text/javascript"></script>
   <?php
-  session_start();
+    session_start();
   ?>
   <section id="processes">
     <div id="arrow">
@@ -28,7 +28,6 @@
             <option value="fcfs">First come, First served</option>
             <option value="sjf">Shortest Job First (Non-preemptive)</option>
             <option value="npp">Non-preemptive priority</option>
-            <option value="pp">Preemptive priority</option>
           </select>
         </label></br>
         <label for="num-process">Number of Processes:</label>

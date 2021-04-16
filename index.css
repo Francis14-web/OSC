@@ -3,6 +3,8 @@
 
 html,body{
   overflow-x: hidden;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
   padding: 0;
   margin: 0;
   font-family: Poppins, sans-serif;
@@ -54,6 +56,10 @@ html,body{
     transform: translate(0%);
     opacity: 1;
   }
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 #welcome h1{

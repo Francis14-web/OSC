@@ -2,7 +2,7 @@
 <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 <html>
 <head>
-<link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
   <section id="Greet">
