@@ -264,6 +264,12 @@ function generateTableSJF() {
       secondaryBackupOfY.sort(function(a, b) {
         return a[2] - b[2];
       });
+      if(secondaryBackupOfY[ctr][1] > i){
+        secondaryBackupOfY.sort(function(a, b) {
+          return a[1] - b[1];
+        });
+      }
+
       bt = secondaryBackupOfY[ctr][2];
       while (btctr < bt) {
         chartArray.push(secondaryBackupOfY[ctr][0]);
@@ -413,6 +419,11 @@ function generateTableNPP() {
       secondaryBackupOfY.sort(function(a, b) {
         return a[3] - b[3];
       });
+      if(secondaryBackupOfY[ctr][1] > i){
+        secondaryBackupOfY.sort(function(a, b) {
+          return a[1] - b[1];
+        });
+      }
       bt = secondaryBackupOfY[ctr][2];
       while (btctr < bt) {
         chartArray.push(secondaryBackupOfY[ctr][0]);
