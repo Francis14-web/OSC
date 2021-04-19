@@ -249,7 +249,7 @@ function generateTableSJF() {
       }
       if (repeat == true) {
         secondaryBackupOfY.sort(function(a, b) {
-          return a[2] - b[2];
+          return a[1] - b[1] || a[2] - b[2];
         });
       }
       bt = secondaryBackupOfY[ctr][2];
@@ -396,6 +396,7 @@ function generateTableNPP() {
     var bt = 0;
     var btctr = 0;
     if (i == secondaryBackupOfY[ctr][1]) {
+      var shifter = 0;
       for (var compare = 1; compare < secondaryBackupOfY.length; compare++) {
         if (i == secondaryBackupOfY[compare][1]) {
           //sort bt
@@ -404,7 +405,7 @@ function generateTableNPP() {
       }
       if (repeat == true) {
         secondaryBackupOfY.sort(function(a, b) {
-          return a[3] - b[3];
+          return a[1] - b[1] || a[3] - b[3];
         });
       }
       bt = secondaryBackupOfY[ctr][2];
