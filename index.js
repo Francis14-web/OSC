@@ -66,12 +66,12 @@ function getValue() {
     //insert at the end of the array
     if (algo == "npp" || algo == "pp") {
       tmpprio = document.getElementById("main-table").rows[i].cells[3].getElementsByTagName('input')[0].value;
-      if (tmpprio == "" || tmpprio < 0) {
+      if (tmpprio == "" || tmpprio < 1 || tmpprio > 10) {
         inputValidator = false;
         break;
       }
     }
-    if (tmpid == "" || tmpat == "" || tmpbt == "" || tmpid < 0 || tmpat < 0 || tmpbt < 0) {
+    if (tmpat == "" || tmpbt == "" || tmpat < 0 || tmpbt < 1 || tmpat > 30 || tmpbt > 30) {
       inputValidator = false;
       break;
     } else {
@@ -97,7 +97,7 @@ function getValue() {
     else if (algo == "pp")
       generateTablePP();
   } else {
-    alert("Invalid input.");
+    alert("Invalid input.\n\nPlease take note of the ff:\nArrival time: 0-30\nBurst Time: 1-30\nPriority: 1-10");
   }
 }
 
