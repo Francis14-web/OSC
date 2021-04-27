@@ -38,7 +38,7 @@
         <th>Arrival Time</th>
         <th>Burst Time</th>
         <?php
-        if ($algorithm == "npp" || $algorithm == "pp"){
+        if ($algorithm == "npp"){
           echo '<th>Priority</th>';
         }
         ?>
@@ -53,7 +53,7 @@
         echo '<td> P'.$i +  1 .'</td>';
         echo '<td> <input type="number" placeholder="0" id="process-id" min="1" maxlength="2"> </td>';
         echo '<td> <input type="number" placeholder="0" id="process-id" min="0" maxlength="2"> </td>';
-        if ($algorithm == "npp" || $algorithm == "pp"){
+        if ($algorithm == "npp"){
           echo '<td> <input type="number" placeholder="0" id="process-id" min="0" maxlength="2"> </td>';
           $colspan_bottom = 7;
         }

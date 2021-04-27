@@ -38,7 +38,11 @@
   background-color: #7CFC00;
 }
 
-.yellow, .orange, .red, .pink, .violet, .blue, .lblue, .lgreen, .green, .lime{
+.gray{
+  background-color: #BBBBBB;
+}
+
+.yellow, .orange, .red, .pink, .violet, .blue, .lblue, .lgreen, .green, .lime, .gray{
   color: black;
   font-weight: bolder;
   letter-spacing: 2px;
