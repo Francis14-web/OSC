@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body onload="load_title()">
-  <script src="index.js" type="text/javascript"></script>
+
   <?php
   session_start();
   $numprocess = $_SESSION['nump'];
@@ -35,11 +35,11 @@
       <table style="width:80%" align="center" id="main-table">
       <tr>
         <th>Process ID</th>
-        <th>Arrival Time</th>
-        <th>Burst Time</th>
+        <th>Arrival Time</br>(Min: 0 - Max: 30)</th>
+        <th>Burst Time</br>(Min: 1 - Max: 30)</th>
         <?php
         if ($algorithm == "npp"){
-          echo '<th>Priority</th>';
+          echo '<th>Priority</br>(Min: 1 - Max: 10)</th>';
         }
         ?>
         <th>Completion Time</th>
@@ -72,11 +72,15 @@
         ?>
       </tr>
     </table>
-    <input type="submit" onclick="getValue()" value="GO" id="go-button">
+    <div id="buttons">
+      <input type="submit" onclick="getValue()" value="GO" id="go-button">
+      <input type="submit" onclick="resetAll()" value="RESET" id="reset-button">
+    </div>
     </div>
   </section>
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
   <script src="mouseeffect.js"></script>
+  <script src="index.js" type="text/javascript"></script>
 </body>
 </html>

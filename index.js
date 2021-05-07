@@ -1,6 +1,6 @@
 var numprocess;
 var mainscreen = document.getElementById('processes');
-var tmpid, tmpat, tmpbt, tmpprio;
+var tmpid, tmpat, tmpbt, tmpprio, atContainer;
 var y = [],
   backupOfY = [],
   secondaryBackupOfY = [],
@@ -54,6 +54,11 @@ function getValue() {
     var parentEl = myElem.parentElement;
     parentEl.removeChild(myElem);
   }
+  var myElem = document.getElementById('GanttChartTitle');
+  if (myElem != null) { //tanggalin kung present sa website yung table output.
+    var parentEl = myElem.parentElement;
+    parentEl.removeChild(myElem);
+  }
 
   //get the value of every textbox then ilalagay sa array
   for (i = 1; i <= numprocess; i++) {
@@ -96,6 +101,42 @@ function getValue() {
   }
 }
 
+function resetAll(){
+  var confirmReset = confirm("Sure ka ba?");
+  if (confirmReset == true){
+    var myElem = document.getElementById('myTable');
+    if (myElem != null) { //tanggalin kung present sa website yung table output.
+      var parentEl = myElem.parentElement;
+      parentEl.removeChild(myElem);
+    }
+    var myElem = document.getElementById('GanttChartTitle');
+    if (myElem != null) { //tanggalin kung present sa website yung table output.
+      var parentEl = myElem.parentElement;
+      parentEl.removeChild(myElem);
+    }
+    if (algo == "npp"){
+      for (i = 1; i <= numprocess; i++) {
+        document.getElementById("main-table").rows[i].cells[1].getElementsByTagName('input')[0].value = "";
+        document.getElementById("main-table").rows[i].cells[2].getElementsByTagName('input')[0].value = "";
+        document.getElementById("main-table").rows[i].cells[3].getElementsByTagName('input')[0].value = "";
+        document.getElementById("main-table").rows[i].cells[4].innerHTML = "";
+        document.getElementById("main-table").rows[i].cells[5].innerHTML = "";
+        document.getElementById("main-table").rows[i].cells[6].innerHTML = "";
+      }
+    } else {
+      for (i = 1; i <= numprocess; i++) {
+        document.getElementById("main-table").rows[i].cells[1].getElementsByTagName('input')[0].value = "";
+        document.getElementById("main-table").rows[i].cells[2].getElementsByTagName('input')[0].value = "";
+        document.getElementById("main-table").rows[i].cells[3].innerHTML = "";
+        document.getElementById("main-table").rows[i].cells[4].innerHTML = "";
+        document.getElementById("main-table").rows[i].cells[5].innerHTML = "";
+      }
+    }
+    document.getElementById("ave-tat").innerHTML = "Average Turnaround Time: Undefined";
+    document.getElementById("ave-wt").innerHTML = "Average Waiting Time: Undefined";
+  }
+}
+
 function generateTableFCFS() {
   chartArray = [];
   //code to sort array based on their arrival time
@@ -110,8 +151,9 @@ function generateTableFCFS() {
   while (ctr != y.length) {
     var bt = y[ctr][2];
     var btctr = 0;
+    atContainer = y[ctr][1] + 1 ;
 
-    if (i >= y[ctr][1]) { // Kapag parehas or greater than yung AT at value ni i, papasok sa IF na ito.
+    if (i >= atContainer) { // Kapag parehas or greater than yung AT at value ni i, papasok sa IF na ito.
       while (btctr < bt) {
         chartArray.push(y[ctr][0]);
         btctr++;
@@ -141,7 +183,8 @@ function generateTableSJF() {
     });
     var bt = 0;
     var btctr = 0;
-    if (i == secondaryBackupOfY[ctr][1]) {
+    atContainer = secondaryBackupOfY[ctr][1] + 1 ;
+    if (i == atContainer) {
       for (var compare = 1; compare < secondaryBackupOfY.length; compare++) {
         if (i == secondaryBackupOfY[compare][1]) {
           //sort bt
@@ -160,7 +203,7 @@ function generateTableSJF() {
         i++;
       }
       secondaryBackupOfY.shift();
-    } else if (i > secondaryBackupOfY[ctr][1]) {
+    } else if (i > atContainer) {
       //sort burst time
       secondaryBackupOfY.sort(function(a, b) {
         return a[2] - b[2];
@@ -200,7 +243,8 @@ function generateTableNPP() {
     });
     var bt = 0;
     var btctr = 0;
-    if (i == secondaryBackupOfY[ctr][1]) {
+    atContainer = secondaryBackupOfY[ctr][1] + 1;
+    if (i == atContainer) {
       var shifter = 0;
       for (var compare = 1; compare < secondaryBackupOfY.length; compare++) {
         if (i == secondaryBackupOfY[compare][1]) {
@@ -220,7 +264,7 @@ function generateTableNPP() {
         i++;
       }
       secondaryBackupOfY.shift();
-    } else if (i > secondaryBackupOfY[ctr][1]) {
+    } else if (i > atContainer) {
       //sort burst time
       secondaryBackupOfY.sort(function(a, b) {
         return a[3] - b[3];
@@ -248,6 +292,12 @@ function generateTableNPP() {
 }
 
 function generateTable(){
+  var a = document.createElement("h1");
+  a.setAttribute("id", "GanttChartTitle");
+  a.setAttribute("align", "center");
+  document.body.appendChild(a);
+  document.getElementById("GanttChartTitle").innerHTML = "Gantt Chart";
+
   var a = document.createElement("TABLE");
   a.setAttribute("id", "myTable");
   a.setAttribute("align", "center");
@@ -288,6 +338,7 @@ function generateTable(){
       var w = document.createTextNode("...");
       v.appendChild(w);
       document.getElementById("ganttTime").appendChild(v);
+
       //print the last ms
       var v = document.createElement("TD");
       var w = document.createTextNode(i);
@@ -317,7 +368,7 @@ function generateTable(){
       if (y[j][0] == chartArray[i]) {
         getIndex = i;
       }
-    completionTime.push([y[j][0], getIndex + 1]);
+    completionTime.push([y[j][0], getIndex]);
   }
 
   var cellCT = 3;

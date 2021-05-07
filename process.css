@@ -225,15 +225,18 @@ th, td {
   align-items: center;
 }
 
-#go-button {
+#buttons{
+  display: flex;
+  justify-content: center;
+}
+
+#go-button, #reset-button {
   cursor: pointer;
   position: relative;
   background: linear-gradient(90deg,#03a9f4,#f441a5, #ffeb3b, #03a9f4);
   border: none;
   border-radius: 15px;
-  left: 50%;
-  transform: translate(-50%);
-  margin-top: 15px;
+  margin: 15px;
   width: 150px;
   letter-spacing: 3px;
   outline: 0;
@@ -277,17 +280,18 @@ th, td {
 #myTable{
   position: relative;
   z-index: 1;
-  margin-top: 30px;
   margin-bottom: 100px;
   background: inherit;
 }
 
 #desc-title{
   text-align: center;
+  font-size: 14px;
   margin: auto;
   margin-bottom: 25px;
   width: 60%;
 }
+
 
 html, body, #proc, table{
   background-size: 500% 500%;
@@ -324,4 +328,14 @@ html, body, #proc, table{
 .container .demo{
   position: absolute;
   z-index: 2;
+}
+
+.leftrightborder{
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#GanttChartTitle{
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
