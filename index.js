@@ -102,7 +102,7 @@ function getValue() {
 }
 
 function resetAll(){
-  var confirmReset = confirm("Sure ka ba?");
+  var confirmReset = confirm("Are you sure?");
   if (confirmReset == true){
     var myElem = document.getElementById('myTable');
     if (myElem != null) { //tanggalin kung present sa website yung table output.
@@ -165,7 +165,6 @@ function generateTableFCFS() {
       i++;
     }
   }
-  chartArray.push("");
 
   //create main table. Yung <table> </table>
   generateTable();
@@ -226,7 +225,6 @@ function generateTableSJF() {
       i++;
     }
   }
-  chartArray.push("");
 
   generateTable();
 }
@@ -286,7 +284,6 @@ function generateTableNPP() {
       i++;
     }
   }
-  chartArray.push("");
 
   generateTable();
 }
@@ -330,7 +327,10 @@ function generateTable(){
       i++;
     }
     i -= 1;
-    var h = document.createTextNode(chartArray[i]);
+    if (chartArray[i] == "")
+      var h = document.createTextNode("IDLE");
+    else
+      var h = document.createTextNode(chartArray[i]);
     if (c_span > 2){
       c_span = 3;
       //print ellipsis
@@ -358,7 +358,6 @@ function generateTable(){
     }
     g.appendChild(h);
     document.getElementById("ganttChart").appendChild(g);
-
   }
 
   //loop para makuha yung completion time
